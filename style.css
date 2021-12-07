@@ -38,3 +38,11 @@ input[type=email] {
   color: blue;
   background-color:lightgoldenrodyellow
 }
+input[type=submit] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  color: green;
+  background-color:lightgrey;
+}
