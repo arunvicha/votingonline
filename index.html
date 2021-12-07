@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting page template</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 align="center">Online voting system</h1>
+    <h3>Candidates names are given below choose you vote!!</h3>
+    <p class="unique">you can only choose one person....</p>
+
+    <form id="submit-form" action="" method="post">
+        <b>Enter your name here:
+        <input type="text" name="name" id="name" placeholder="Type here" required="required"><br><br>
+        Enter your email id here:</b>
+        <input type="email" name="email" id="email" placeholder="Type here" required="required"><br>
+        <p>Please select your candidate:</p>
+        <input type="radio" id="html" name="voted_for" value="Aman">
+        <label for="html">Aman</label><br>
+        <input type="radio" id="html" name="voted_for" value="Diya">
+        <label for="html">Diya</label><br>
+        <input type="radio" id="html" name="voted_for" value="Hari">
+        <label for="html">Hari</label><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+
+    <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycby76Sjya_uZzcfdathtdVrLWPVnCBCFzStvd1zrCr72UOkOqhfaInXiyFXPbWJzA7pk0A/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Voting success Click ok to coninue")
+                    window.location.href="show.html"
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error or no internet connection")
+    
+                }
+            })
+        })
+    </script>
+
+
+
+</body>
+</html>
